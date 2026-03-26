@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corelix — The European PaaS for the Sovereign Era</title>
+  <meta name="description" content="Corelix is an EU-native Platform-as-a-Service built for digital resilience. Self-host with enterprise features or let us manage it. GDPR-native, made in France, starts free.">
+  <meta name="keywords" content="PaaS, European cloud, self-hosted, GDPR, digital resilience, Coolify, Vercel alternative, EU sovereignty, platform as a service, France">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://corelix.io/">
+  <meta property="og:title" content="Corelix — The European PaaS for the Sovereign Era">
+  <meta property="og:description" content="EU-native Platform-as-a-Service built for digital resilience. Self-host or managed. GDPR-native, made in France, starts free.">
+  <meta property="og:image" content="https://corelix.io/images/og-cover.png">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Corelix — The European PaaS for the Sovereign Era">
+  <meta name="twitter:description" content="EU-native Platform-as-a-Service. Self-host or managed. GDPR-native, made in France.">
+  <meta name="twitter:image" content="https://corelix.io/images/og-cover.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://corelix.io/">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234A7C82'/%3E%3Cpath d='M16 7C11.03 7 7 11.03 7 16s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 14.4c-2.98 0-5.4-2.42-5.4-5.4s2.42-5.4 5.4-5.4 5.4 2.42 5.4 5.4-2.42 5.4-5.4 5.4z' fill='white' opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='white'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#4A7C82">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Corelix",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux",
+    "description": "EU-native Platform-as-a-Service built for digital resilience. Self-host with enterprise features or managed cloud.",
+    "url": "https://corelix.io",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "name": "Community Edition",
+        "description": "Free, open-source edition with 11 enterprise features"
+      }
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Corelix",
+      "url": "https://corelix.io",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      }
+    },
+    "featureList": [
+      "Granular Permissions",
+      "Encrypted S3 Backups",
+      "Resource Backups",
+      "Custom Template Sources",
+      "Enhanced Database Classification",
+      "Network Isolation",
+      "MCP Server (119+ AI Tools)",
+      "Cluster Management",
+      "Docker Registry Management",
+      "Enhanced UI Themes",
+      "Additional Build Types"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ====== Header ====== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Corelix home">
+        <svg class="header__logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#4A7C82"/>
+          <path d="M16 7C11.03 7 7 11.03 7 16s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 14.4c-2.98 0-5.4-2.42-5.4-5.4s2.42-5.4 5.4-5.4 5.4 2.42 5.4 5.4-2.42 5.4-5.4 5.4z" fill="white" opacity="0.9"/>
+          <circle cx="16" cy="16" r="2.5" fill="white"/>
+        </svg>
+        Corelix
+      </a>
+
+      <nav class="header__nav" aria-label="Main navigation">
+        <a href="features.html" class="header__link">Features</a>
+        <a href="pricing.html" class="header__link">Pricing</a>
+        <a href="about.html" class="header__link">About</a>
+        <a href="https://github.com/corelixio/platform" class="header__link" target="_blank" rel="noopener">GitHub</a>
+        <a href="contact.html" class="header__link">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="https://github.com/corelixio/platform" class="btn btn--secondary btn--sm" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Star
+        </a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+      </div>
+
+      <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="features.html" class="mobile-nav__link">Features</a>
+    <a href="pricing.html" class="mobile-nav__link">Pricing</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="https://github.com/corelixio/platform" class="mobile-nav__link" target="_blank" rel="noopener">GitHub</a>
+    <a href="contact.html" class="mobile-nav__link">Contact</a>
+    <a href="pricing.html" class="btn btn--primary btn--lg" style="margin-top:auto;">Get Started</a>
+  </nav>
+
+  <main id="main">
+    <!-- ====== Hero ====== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__badge animate-in">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#003399" stroke-width="1.5"/><circle cx="7" cy="3" r="0.8" fill="#FFCC00"/><circle cx="4" cy="4.5" r="0.8" fill="#FFCC00"/><circle cx="10" cy="4.5" r="0.8" fill="#FFCC00"/><circle cx="3.5" cy="7" r="0.8" fill="#FFCC00"/><circle cx="10.5" cy="7" r="0.8" fill="#FFCC00"/><circle cx="4" cy="9.5" r="0.8" fill="#FFCC00"/><circle cx="10" cy="9.5" r="0.8" fill="#FFCC00"/><circle cx="5.5" cy="11" r="0.8" fill="#FFCC00"/><circle cx="8.5" cy="11" r="0.8" fill="#FFCC00"/></svg>
+          Made in Europe · Open Source
+        </div>
+
+        <h1 class="hero__title animate-in animate-in--delay-1">
+          Your infrastructure,<br>your <em>sovereignty</em>.
+        </h1>
+
+        <p class="hero__subtitle animate-in animate-in--delay-2">
+          The EU-native Platform-as-a-Service built for digital resilience.
+          Deploy any app, database, or service on your own servers — or let us host it.
+          Enterprise features included. Starts free.
+        </p>
+
+        <div class="hero__actions animate-in animate-in--delay-3">
+          <a href="pricing.html" class="btn btn--primary btn--lg">Get Started Free</a>
+          <a href="features.html" class="btn btn--secondary btn--lg">Explore Features</a>
+        </div>
+
+        <div class="hero__trust animate-in animate-in--delay-4">
+          <span class="hero__trust-item">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1l2.5 5 5.5.8-4 3.9.9 5.3L8 13.3 3.1 16l.9-5.3-4-3.9L5.5 6z" fill="#FFCC00" stroke="#003399" stroke-width="0.5"/></svg>
+            EU Data Residency
+          </span>
+          <span class="hero__trust-item">
+            <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" fill="#002395"/><rect x="1" y="1" width="4.67" height="14" fill="#002395"/><rect x="5.67" y="1" width="4.67" height="14" fill="white"/><rect x="10.33" y="1" width="4.67" height="14" fill="#ED2939"/></svg>
+            Made in France
+          </span>
+          <span class="hero__trust-item">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L2 4v4.5c0 3.5 2.6 6.7 6 7.5 3.4-.8 6-4 6-7.5V4L8 1z" fill="#5DAE8B" opacity="0.15"/><path d="M8 1L2 4v4.5c0 3.5 2.6 6.7 6 7.5 3.4-.8 6-4 6-7.5V4L8 1z" stroke="#5DAE8B" stroke-width="1.2" fill="none"/><path d="M6 8l1.5 1.5L10.5 6" stroke="#5DAE8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            GDPR Native
+          </span>
+          <span class="hero__trust-item">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1z" stroke="#4A7C82" stroke-width="1.2" fill="none"/><path d="M5.5 6.5C6.33 5.17 7 5 8 5s2 .5 2 2c0 1-1 1.5-2 2" stroke="#4A7C82" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="11.5" r="0.75" fill="#4A7C82"/></svg>
+            Open Source (MIT)
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== Why EU Section ====== -->
+    <section class="section section--cream" id="why-eu">
+      <div class="container">
+        <div class="text-center mb-3xl" data-animate>
+          <span class="tag tag--eu">Digital Sovereignty</span>
+          <h2 class="mt-lg">The CLOUD Act problem is real.<br>Your solution is European.</h2>
+          <p class="mx-auto mt-lg" style="color:var(--color-neutral-600); font-size:1.05rem;">
+            US hyperscalers control 70% of Europe's cloud. The CLOUD Act gives US authorities access to your data regardless of where it's stored.
+            GDPR fines run to 4% of global revenue. Corelix eliminates this impossible compliance bind — your infrastructure runs on European soil, under European law, with no extraterritorial exposure.
+          </p>
+        </div>
+
+        <div class="stats-grid" data-animate data-animate-delay="200">
+          <div>
+            <div class="stat__number">€264B</div>
+            <div class="stat__label">Annual EU spend on US cloud services</div>
+          </div>
+          <div>
+            <div class="stat__number">70%</div>
+            <div class="stat__label">EU cloud market held by US providers</div>
+          </div>
+          <div>
+            <div class="stat__number">SEAL-4</div>
+            <div class="stat__label">Aligned with EU Cloud Sovereignty Framework</div>
+          </div>
+          <div>
+            <div class="stat__number">EDRIX</div>
+            <div class="stat__label">Contributing to Europe's Digital Resilience Index</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== Features Highlight ====== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="text-center mb-3xl" data-animate>
+          <h2>Enterprise features.<br>Community pricing.</h2>
+          <p class="mx-auto mt-lg" style="color:var(--color-neutral-600); font-size:1.05rem;">
+            11 features ship free and open source. No vendor lock-in. No hidden limits.
+            Deploy on any server you control — from a €4/mo Hetzner VPS to dedicated bare metal.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card" data-animate data-animate-delay="0">
+            <div class="feature-card__icon feature-card__icon--teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="feature-card__title">Granular Permissions</h3>
+            <p class="feature-card__desc">Project-level and environment-level access control. View Only, Deploy, or Full Access — per user, per project, per environment.</p>
+            <span class="feature-card__tag feature-card__tag--free">Free</span>
+          </div>
+
+          <div class="feature-card" data-animate data-animate-delay="100">
+            <div class="feature-card__icon feature-card__icon--coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+            </div>
+            <h3 class="feature-card__title">Encrypted Backups</h3>
+            <p class="feature-card__desc">NaCl SecretBox encryption for every S3 backup. Military-grade authenticated encryption at rest. Per-storage toggle.</p>
+            <span class="feature-card__tag feature-card__tag--free">Free</span>
+          </div>
+
+          <div class="feature-card" data-animate data-animate-delay="200">
+            <div class="feature-card__icon feature-card__icon--peri">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="feature-card__title">Network Isolation</h3>
+            <p class="feature-card__desc">Per-environment Docker networks, dedicated proxy network, and Swarm overlay support with optional IPsec encryption.</p>
+            <span class="feature-card__tag feature-card__tag--free">Free</span>
+          </div>
+
+          <div class="feature-card" data-animate data-animate-delay="300">
+            <div class="feature-card__icon feature-card__icon--sage">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="feature-card__title">Resource Backups</h3>
+            <p class="feature-card__desc">Volume snapshots, configuration exports, and full backups for every application, database, and service. Independent cron scheduling.</p>
+            <span class="feature-card__tag feature-card__tag--free">Free</span>
+          </div>
+
+          <div class="feature-card" data-animate data-animate-delay="400">
+            <div class="feature-card__icon feature-card__icon--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h3 class="feature-card__title">AI-Powered Management</h3>
+            <p class="feature-card__desc">119+ MCP tools let AI assistants deploy, monitor, and manage your infrastructure via natural language. Works with Claude, Cursor, and VS Code.</p>
+            <span class="feature-card__tag feature-card__tag--free">Free</span>
+          </div>
+
+          <div class="feature-card" data-animate data-animate-delay="500">
+            <div class="feature-card__icon feature-card__icon--teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3 class="feature-card__title">Cluster Management</h3>
+            <p class="feature-card__desc">Full Docker Swarm dashboard: node management, service viewer, visualizer, secrets, configs. K8s-ready abstraction layer.</p>
+            <span class="feature-card__tag feature-card__tag--pro">Pro</span>
+          </div>
+        </div>
+
+        <div class="text-center mt-lg" style="margin-top:var(--space-2xl);" data-animate>
+          <a href="features.html" class="btn btn--outline">View All 15 Features →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== How It Works ====== -->
+    <section class="section section--cream" id="how-it-works">
+      <div class="container">
+        <div class="text-center mb-3xl" data-animate>
+          <h2>Deploy in under 2 minutes</h2>
+          <p class="mx-auto mt-lg" style="color:var(--color-neutral-600);">
+            Corelix extends Coolify — the leading open-source self-hosted PaaS. No patches, no forks. A clean addon.
+          </p>
+        </div>
+
+        <div class="grid-3" data-animate data-animate-delay="200">
+          <div class="text-center">
+            <div style="font-family:var(--font-display); font-size:2rem; font-weight:800; color:var(--color-primary-500); margin-bottom:var(--space-md);">1</div>
+            <h3>Install Coolify</h3>
+            <p style="color:var(--color-neutral-600); font-size:0.9rem; margin-top:var(--space-sm);">Already running Coolify? Skip this step. Fresh server? One command installs everything.</p>
+          </div>
+          <div class="text-center">
+            <div style="font-family:var(--font-display); font-size:2rem; font-weight:800; color:var(--color-primary-500); margin-bottom:var(--space-md);">2</div>
+            <h3>Add the Addon</h3>
+            <p style="color:var(--color-neutral-600); font-size:0.9rem; margin-top:var(--space-sm);">One command. Uses Coolify's native custom compose support — no source modifications.</p>
+          </div>
+          <div class="text-center">
+            <div style="font-family:var(--font-display); font-size:2rem; font-weight:800; color:var(--color-primary-500); margin-bottom:var(--space-md);">3</div>
+            <h3>Enable What You Need</h3>
+            <p style="color:var(--color-neutral-600); font-size:0.9rem; margin-top:var(--space-sm);">Every feature is independent. Toggle permissions, encryption, networks, templates — only what your team needs.</p>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-3xl);" data-animate data-animate-delay="300">
+          <pre style="display:inline-block; text-align:left; max-width:560px; width:100%;"><code><span style="color:#8A8780;"># One-line install (Coolify already running)</span>
+git clone https://github.com/corelixio/platform.git
+cd platform
+sudo bash install.sh --install-addon</code></pre>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== Comparison ====== -->
+    <section class="section" id="comparison">
+      <div class="container">
+        <div class="text-center mb-3xl" data-animate>
+          <h2>How Corelix compares</h2>
+          <p class="mx-auto mt-lg" style="color:var(--color-neutral-600);">
+            The enterprise features you need, at a fraction of the cost. No vendor lock-in.
+          </p>
+        </div>
+
+        <div style="overflow-x:auto;" data-animate data-animate-delay="200">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">Capability</th>
+                <th scope="col" class="highlight-col">Corelix</th>
+                <th scope="col">Vercel</th>
+                <th scope="col">Railway</th>
+                <th scope="col">Coolify (stock)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EU data residency</td>
+                <td class="highlight-col"><span class="check">✓ Native</span></td>
+                <td><span class="cross">US-based</span></td>
+                <td><span class="cross">US-based</span></td>
+                <td><span class="check">✓ Self-host</span></td>
+              </tr>
+              <tr>
+                <td>CLOUD Act immunity</td>
+                <td class="highlight-col"><span class="check">✓ Full</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="check">✓ Self-host</span></td>
+              </tr>
+              <tr>
+                <td>Granular permissions</td>
+                <td class="highlight-col"><span class="check">✓ Project + Env</span></td>
+                <td>Teams only</td>
+                <td>Basic</td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Encrypted backups</td>
+                <td class="highlight-col"><span class="check">✓ NaCl SecretBox</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Network isolation</td>
+                <td class="highlight-col"><span class="check">✓ Per-environment</span></td>
+                <td>N/A</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗ Flat network</span></td>
+              </tr>
+              <tr>
+                <td>Cluster management</td>
+                <td class="highlight-col"><span class="check">✓ Swarm + K8s ready</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td>Checkbox only</td>
+              </tr>
+              <tr>
+                <td>AI management (MCP)</td>
+                <td class="highlight-col"><span class="check">✓ 119+ tools</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Open source</td>
+                <td class="highlight-col"><span class="check">✓ MIT</span></td>
+                <td><span class="cross">✗ Proprietary</span></td>
+                <td><span class="cross">✗ Proprietary</span></td>
+                <td><span class="check">✓ AGPL</span></td>
+              </tr>
+              <tr>
+                <td>Starting price</td>
+                <td class="highlight-col"><strong>€0/mo</strong></td>
+                <td>$20/mo</td>
+                <td>$5/mo + usage</td>
+                <td>€0/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== CTA ====== -->
+    <section class="cta-section">
+      <div class="container" data-animate>
+        <h2>Ready to take control?</h2>
+        <p>Start with the free community edition. Upgrade to Pro when you need cluster management, whitelabeling, or managed hosting.</p>
+        <div class="flex items-center justify-center gap-md" style="flex-wrap:wrap;">
+          <a href="pricing.html" class="btn btn--primary btn--lg">Get Started Free</a>
+          <a href="https://github.com/corelixio/platform" class="btn btn--secondary btn--lg" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="header__logo" style="color:var(--color-neutral-100);">
+            <svg class="header__logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#4A7C82"/>
+              <path d="M16 7C11.03 7 7 11.03 7 16s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 14.4c-2.98 0-5.4-2.42-5.4-5.4s2.42-5.4 5.4-5.4 5.4 2.42 5.4 5.4-2.42 5.4-5.4 5.4z" fill="white" opacity="0.9"/>
+              <circle cx="16" cy="16" r="2.5" fill="white"/>
+            </svg>
+            Corelix
+          </a>
+          <p>EU-native Platform-as-a-Service built for digital resilience. Made in France.</p>
+          <div class="footer__eu-badge">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="3" r="0.7" fill="currentColor"/><circle cx="4" cy="4.5" r="0.7" fill="currentColor"/><circle cx="10" cy="4.5" r="0.7" fill="currentColor"/></svg>
+            European Digital Resilience
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__col-title">Product</h4>
+          <ul class="footer__links">
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="features.html#mcp-server">MCP Server</a></li>
+            <li><a href="https://github.com/corelixio/platform" target="_blank" rel="noopener">Documentation</a></li>
+            <li><a href="https://github.com/corelixio/platform/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__col-title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#sovereignty">Digital Sovereignty</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://github.com/corelixio/platform" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__col-title">Resources</h4>
+          <ul class="footer__links">
+            <li><a href="https://github.com/corelixio/platform/discussions" target="_blank" rel="noopener">Community</a></li>
+            <li><a href="https://github.com/corelixio/platform/issues" target="_blank" rel="noopener">Support</a></li>
+            <li><a href="https://github.com/corelixio/platform/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+            <li><a href="about.html#gdpr">GDPR Compliance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025–2026 Corelix. Made with care in France.</p>
+        <div class="footer__bottom-links">
+          <a href="contact.html">Privacy</a>
+          <a href="contact.html">Terms</a>
+          <a href="contact.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

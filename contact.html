@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Corelix | Get in Touch</title>
-  <meta name="description" content="Contact the Corelix team for sales inquiries, support, or partnership opportunities. EU-based PaaS support. Made in France.">
+  <meta name="description" content="Contact the Corelix team. Send us a message for sales inquiries, technical support, partnership opportunities, or data protection requests.">
   <meta name="keywords" content="Corelix contact, PaaS support, European cloud, enterprise sales, partnership, GDPR, EU hosting">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://corelix.io/contact.html">
   <meta property="og:title" content="Contact — Corelix | Get in Touch">
-  <meta property="og:description" content="Contact the Corelix team for sales inquiries, support, or partnership opportunities. EU-based PaaS support. Made in France.">
+  <meta property="og:description" content="Contact the Corelix team. Send us a message for sales inquiries, technical support, partnership opportunities, or data protection requests.">
   <meta property="og:image" content="https://corelix.io/images/og-cover.png">
   <meta property="og:locale" content="en_US">
 
@@ -27,16 +27,11 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234A7C82'/%3E%3Cpath d='M16 7C11.03 7 7 11.03 7 16s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 14.4c-2.98 0-5.4-2.42-5.4-5.4s2.42-5.4 5.4-5.4 5.4 2.42 5.4 5.4-2.42 5.4-5.4 5.4z' fill='white' opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='white'/%3E%3C/svg%3E">
   <meta name="theme-color" content="#4A7C82">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    .contact-form { max-width: 600px; margin: 0 auto; }
+    .contact-form { max-width: 640px; margin: 0 auto; }
     .form-group { margin-bottom: var(--space-lg); }
     .form-label {
       display: block;
@@ -46,6 +41,7 @@
       color: var(--color-neutral-700);
       margin-bottom: var(--space-sm);
     }
+    .form-label .required { color: var(--color-coral-500); }
     .form-input,
     .form-select,
     .form-textarea {
@@ -53,11 +49,11 @@
       padding: 0.75rem 1rem;
       font-family: var(--font-body);
       font-size: 0.9rem;
-      border: 1px solid var(--color-neutral-300);
+      border: 1.5px solid var(--color-neutral-300);
       border-radius: var(--radius-lg);
       background: white;
       color: var(--color-neutral-800);
-      transition: border-color var(--duration-fast) var(--ease-smooth);
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
     .form-input:focus,
     .form-select:focus,
@@ -66,7 +62,7 @@
       border-color: var(--color-primary-400);
       box-shadow: 0 0 0 3px rgba(74, 124, 130, 0.1);
     }
-    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-textarea { resize: vertical; min-height: 140px; }
     .form-select {
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B6862' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -74,59 +70,88 @@
       background-position: right 1rem center;
       padding-right: 2.5rem;
     }
-    .form-note {
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--color-neutral-500);
-      margin-top: var(--space-lg);
-      line-height: 1.6;
-    }
-    .form-note a { font-weight: 500; }
-    .contact-card__links { margin-top: var(--space-lg); }
-    .contact-card__links a {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
-      font-size: 0.88rem;
-      font-weight: 500;
-    }
-    .contact-card__links a + a { margin-left: var(--space-md); }
-    .contact-card__response {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--color-neutral-400);
-      margin-top: var(--space-md);
-      font-weight: 500;
-    }
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
-    }
-    .resource-link {
+    .hidden { display: none !important; }
+    .captcha-row {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
-      padding: var(--space-md) var(--space-lg);
-      background: var(--color-neutral-50);
-      border: 1px solid var(--color-neutral-200);
+      gap: var(--space-md);
+    }
+    .captcha-question {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--color-neutral-800);
+      white-space: nowrap;
+    }
+    .captcha-input { max-width: 100px; }
+    .success-msg {
+      background: rgba(93,174,139,0.08);
+      border: 1px solid var(--color-sage-400);
       border-radius: var(--radius-lg);
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--color-neutral-700);
+      padding: var(--space-lg);
+      color: var(--color-sage-600);
+    }
+    .error-msg {
+      background: rgba(232,146,108,0.08);
+      border: 1px solid var(--color-coral-400);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      color: var(--color-coral-600);
+    }
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--color-neutral-500);
+      margin-top: var(--space-md);
+    }
+    .community-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .community-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-lg) var(--space-xl);
+      background: white;
+      border: 1px solid var(--color-neutral-200);
+      border-radius: var(--radius-xl);
       text-decoration: none;
       transition: all var(--duration-normal) var(--ease-smooth);
     }
-    .resource-link:hover {
+    .community-link:hover {
       border-color: var(--color-primary-300);
-      color: var(--color-primary-600);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
     }
-    .resource-link svg { flex-shrink: 0; color: var(--color-primary-400); }
-    @media (max-width: 1024px) { .resources-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) { .resources-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 480px) { .contact-card__links a + a { margin-left: 0; margin-top: var(--space-sm); } .contact-card__links { display: flex; flex-direction: column; gap: var(--space-sm); } }
+    .community-link__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .community-link__icon--teal { background: var(--color-primary-50); color: var(--color-primary-500); }
+    .community-link__icon--peri { background: rgba(124, 140, 245, 0.1); color: var(--color-peri-500); }
+    .community-link__icon svg { width: 1.25rem; height: 1.25rem; }
+    .community-link__text h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.125rem;
+      color: var(--color-neutral-800);
+    }
+    .community-link__text p {
+      font-size: 0.82rem;
+      color: var(--color-neutral-500);
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .community-links { grid-template-columns: 1fr; }
+      .captcha-row { flex-direction: column; align-items: stretch; }
+      .captcha-input { max-width: 100%; }
+    }
   </style>
 
   <!-- Structured Data -->
@@ -141,7 +166,6 @@
       "@type": "Organization",
       "name": "Corelix",
       "url": "https://corelix.io",
-      "email": "sales@corelix.io",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "FR"
@@ -199,144 +223,107 @@
       <div class="container">
         <h1 class="hero__title animate-in">Let's talk.</h1>
         <p class="hero__subtitle animate-in animate-in--delay-1">
-          Whether you're evaluating Corelix for your team, need enterprise support, or want to contribute — we'd love to hear from you.
+          Whether you're evaluating Corelix for your team, need technical support, or want to explore a partnership — we'd love to hear from you.
         </p>
       </div>
     </section>
 
 
-    <!-- ====== Contact Options ====== -->
+    <!-- ====== Contact Form ====== -->
     <section class="section--sm" style="padding-bottom:var(--space-4xl);">
       <div class="container">
-        <h2 class="sr-only">Contact Options</h2>
-        <div class="grid-3">
-          <div class="feature-card" data-animate>
-            <div class="feature-card__icon feature-card__icon--teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            </div>
-            <h3 class="feature-card__title">Community Support</h3>
-            <p class="feature-card__desc">For general questions, feature requests, and community discussions.</p>
-            <div class="contact-card__links">
-              <a href="https://community.corelix.io" target="_blank" rel="noopener">Community Forum →</a>
-              <a href="https://docs.corelix.io/support" target="_blank" rel="noopener">Help Center →</a>
-            </div>
-            <span class="contact-card__response">Response time: Community-driven</span>
-          </div>
-
-          <div class="feature-card" data-animate data-animate-delay="100">
-            <div class="feature-card__icon feature-card__icon--coral">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/><path d="M12 14v2"/></svg>
-            </div>
-            <h3 class="feature-card__title">Sales & Enterprise</h3>
-            <p class="feature-card__desc">Custom deployments, compliance requirements, or volume pricing.</p>
-            <div class="contact-card__links">
-              <a href="mailto:sales@corelix.io">sales@corelix.io →</a>
-            </div>
-            <span class="contact-card__response">Response time: Within 24 hours</span>
-          </div>
-
-          <div class="feature-card" data-animate data-animate-delay="200">
-            <div class="feature-card__icon feature-card__icon--peri">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-            </div>
-            <h3 class="feature-card__title">Partnership</h3>
-            <p class="feature-card__desc">Interested in hosting partnerships, integrations, or reselling?</p>
-            <div class="contact-card__links">
-              <a href="mailto:partners@corelix.io">partners@corelix.io →</a>
-            </div>
-            <span class="contact-card__response">Response time: Within 48 hours</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ====== Contact Form ====== -->
-    <section class="section section--cream">
-      <div class="container">
-        <div class="text-center mb-3xl" data-animate>
-          <h2>Send us a message</h2>
+        <div id="successMsg" class="success-msg hidden" style="max-width:640px; margin:0 auto var(--space-xl);" role="alert">
+          <strong>Message sent.</strong> Thank you for reaching out. We'll get back to you within 1–2 business days.
         </div>
 
-        <form action="#" method="POST" class="contact-form" data-animate data-animate-delay="100">
+        <div id="errorMsg" class="error-msg hidden" style="max-width:640px; margin:0 auto var(--space-xl);" role="alert">
+          <strong>Something went wrong.</strong> <span id="errorText">Failed to send. Please try again later.</span>
+        </div>
+
+        <form id="contactForm" class="contact-form" data-animate novalidate>
           <div class="form-group">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Name <span class="required">*</span></label>
             <input type="text" id="name" name="name" class="form-input" required placeholder="Your name" autocomplete="name">
           </div>
 
           <div class="form-group">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Email <span class="required">*</span></label>
             <input type="email" id="email" name="email" class="form-input" required placeholder="you@company.com" autocomplete="email">
           </div>
 
           <div class="form-group">
-            <label for="company" class="form-label">Company <span style="font-weight:400; color:var(--color-neutral-400);">(optional)</span></label>
-            <input type="text" id="company" name="company" class="form-input" placeholder="Your company" autocomplete="organization">
-          </div>
-
-          <div class="form-group">
-            <label for="subject" class="form-label">Subject</label>
-            <select id="subject" name="subject" class="form-select" required>
+            <label for="inquiryType" class="form-label">Inquiry Type <span class="required">*</span></label>
+            <select id="inquiryType" name="inquiryType" class="form-select" required>
               <option value="" disabled selected>Select a topic</option>
-              <option value="general">General Inquiry</option>
-              <option value="sales">Sales</option>
-              <option value="enterprise">Enterprise</option>
-              <option value="support">Support</option>
+              <option value="general">General Question</option>
+              <option value="support">Technical Support</option>
+              <option value="enterprise">Sales & Enterprise</option>
               <option value="partnership">Partnership</option>
+              <option value="data_protection">Data Protection Request</option>
+              <option value="other">Other</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" class="form-textarea" rows="5" required placeholder="How can we help?"></textarea>
+          <div id="orgField" class="form-group hidden">
+            <label for="organization" class="form-label">Company / Organization <span class="required">*</span></label>
+            <input type="text" id="organization" name="organization" class="form-input" placeholder="Your company or organization" autocomplete="organization">
           </div>
 
-          <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send Message</button>
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject <span class="required">*</span></label>
+            <input type="text" id="subject" name="subject" class="form-input" required placeholder="Brief summary of your inquiry">
+          </div>
 
-          <p class="form-note">
-            We process your data in accordance with GDPR. Read our <a href="#">Privacy Policy</a>.
+          <div class="form-group">
+            <label for="message" class="form-label">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" class="form-textarea" rows="6" required placeholder="How can we help?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Security Check <span class="required">*</span></label>
+            <div class="captcha-row">
+              <span class="captcha-question">What is <span id="captchaQuestion"></span> ?</span>
+              <input type="number" id="captcha" class="form-input captcha-input" required placeholder="Answer" autocomplete="off">
+            </div>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn btn--primary btn--lg" style="width:100%;">Send Message</button>
+
+          <p class="form-note" style="text-align:center;">
+            We process your data in accordance with GDPR. Your message is sent securely and never shared with third parties.
           </p>
         </form>
       </div>
     </section>
 
 
-    <!-- ====== Resources / Quick Links ====== -->
-    <section class="section">
+    <!-- ====== Community Links ====== -->
+    <section class="section section--cream">
       <div class="container">
         <div class="text-center mb-3xl" data-animate>
-          <h2>Resources</h2>
+          <h2>Other ways to connect</h2>
+          <p style="margin:var(--space-md) auto 0; color:var(--color-neutral-600);">Join our community or browse the docs for quick answers.</p>
         </div>
 
-        <div class="resources-grid" data-animate data-animate-delay="100">
-          <a href="https://docs.corelix.io" class="resource-link" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-            Documentation
+        <div class="community-links" data-animate data-animate-delay="100">
+          <a href="https://community.corelix.io" class="community-link" target="_blank" rel="noopener">
+            <div class="community-link__icon community-link__icon--teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="community-link__text">
+              <h4>Community Forum</h4>
+              <p>Questions, feature requests, and discussions</p>
+            </div>
           </a>
 
-          <a href="https://github.com/amirhmoradi/coolify-enhanced" class="resource-link" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            Community Edition (Open Source)
-          </a>
-
-          <a href="https://www.npmjs.com/package/@corelixio/platform-mcp" class="resource-link" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            MCP Server Setup
-          </a>
-
-          <a href="https://community.corelix.io" class="resource-link" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            Community
-          </a>
-
-          <a href="https://docs.corelix.io/changelog" class="resource-link" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 8 12 12 14 14"/><circle cx="12" cy="12" r="10"/></svg>
-            Changelog
-          </a>
-
-          <a href="https://github.com/amirhmoradi/coolify-enhanced/blob/main/LICENSE" class="resource-link" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            License — MIT
+          <a href="https://docs.corelix.io" class="community-link" target="_blank" rel="noopener">
+            <div class="community-link__icon community-link__icon--peri">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            </div>
+            <div class="community-link__text">
+              <h4>Documentation</h4>
+              <p>Guides, API reference, and tutorials</p>
+            </div>
           </a>
         </div>
       </div>
@@ -418,14 +405,101 @@
       <div class="footer__bottom">
         <p>&copy; 2025–2026 Corelix. Made with care in France.</p>
         <div class="footer__bottom-links">
-          <a href="contact.html">Privacy</a>
-          <a href="contact.html">Terms</a>
-          <a href="contact.html">Cookies</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="legal.html">Legal</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    const WORKER_URL = 'https://contact.corelix.io/submit';
+    let captchaAnswer = 0;
+
+    function generateCaptcha() {
+      const a = Math.floor(Math.random() * 10) + 1;
+      const b = Math.floor(Math.random() * 10) + 1;
+      captchaAnswer = a + b;
+      document.getElementById('captchaQuestion').textContent = `${a} + ${b}`;
+    }
+
+    document.getElementById('inquiryType').addEventListener('change', (e) => {
+      const show = ['enterprise', 'partnership'].includes(e.target.value);
+      document.getElementById('orgField').classList.toggle('hidden', !show);
+      document.getElementById('organization').required = show;
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const typeParam = params.get('subject');
+    if (typeParam) {
+      const select = document.getElementById('inquiryType');
+      const mapping = { trial: 'enterprise', managed: 'enterprise', support: 'support' };
+      const val = mapping[typeParam] || typeParam;
+      if (select.querySelector(`option[value="${val}"]`)) {
+        select.value = val;
+        select.dispatchEvent(new Event('change'));
+      }
+    }
+
+    generateCaptcha();
+
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      document.getElementById('successMsg').classList.add('hidden');
+      document.getElementById('errorMsg').classList.add('hidden');
+
+      if (parseInt(document.getElementById('captcha').value) !== captchaAnswer) {
+        document.getElementById('errorText').textContent = 'Incorrect answer. Please try again.';
+        document.getElementById('errorMsg').classList.remove('hidden');
+        generateCaptcha();
+        document.getElementById('captcha').value = '';
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        inquiryType: document.getElementById('inquiryType').value,
+        organization: document.getElementById('organization').value || null,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          document.getElementById('successMsg').classList.remove('hidden');
+          document.getElementById('contactForm').reset();
+          generateCaptcha();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        document.getElementById('errorText').textContent = 'Failed to send. Please try again later.';
+        document.getElementById('errorMsg').classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    });
+  </script>
+
+  <!-- Analytics: OpenPanel (self-hosted) + PostHog (EU) -->
+  <script defer src="https://openpanel.corelix.io/op.js" data-website-id="corelix-io"></script>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setGroupProperties".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_PLACEHOLDER', {api_host: 'https://eu.posthog.com'});
+  </script>
 </body>
 </html>
